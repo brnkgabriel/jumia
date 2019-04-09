@@ -21,7 +21,6 @@
 
 #flash-sales>.-tabs {
   margin-top: 20px;
-  height: 50px;
 }
 
 #flash-sales>.-tabs>.-new_item {
@@ -29,22 +28,83 @@
 }
 
 #flash-sales>.-tabs>.-tabs_container {
-  left: 50%;
-  top: 50%;
-  transform: translate(-50%,-50%);
+  margin: 0 auto;
   border: 1px dashed gray;
   width: 464px;
-  height: 40px;
 }
 
-#flash-sales>.-tabs>.-tabs_container>a {
+#flash-sales>.-tabs>.-tabs_container>div {
   display: inline-block;
   vertical-align: middle;
   width: calc(100% / 5.1);
   background-color: white;
   height: 40px;
+  margin: 5px;
+  margin-bottom: 10px;
+  box-shadow: 0 2px 2px 0 rgba(0,0,0,0.3);
+  cursor: move;
 }
 
+#flash-sales>.-tabs>.-tabs_container>div>.date-close {
+  width: 10px;
+  height: 10px;
+  background-color: red;
+  border-radius: 50%;
+  padding: 5px;
+  top: 0%;
+  left: 50%;
+  -webkit-transform: translate(50%,-40%);
+  transform: translate(-50%,-40%);
+  cursor: pointer;
+  border: 2px solid #eaeded;
+}
+
+#flash-sales>.-tabs>.-tabs_container>div>.date-close::before,
+#flash-sales>.-tabs>.-tabs_container>div>.date-close::after {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%,-50%);
+  content: '';
+  height: 12px;
+  width: 2px;
+  background-color: white;
+}
+
+#flash-sales>.-tabs>.-tabs_container>div>.date-close::before {
+  transform: translate(-50%,-50%) rotate(45deg);
+}
+
+#flash-sales>.-tabs>.-tabs_container>div>.date-close::after {
+  transform: translate(-50%,-50%) rotate(-45deg);
+}
+
+#flash-sales>.-tabs>.-tabs_container>div>.date-text {
+  color: red;
+  font-weight: 600;
+}
+
+#flash-sales>.-tabs>.-tabs_container>div>.date-text.day,
+#flash-sales>.-tabs>.-tabs_container>div>.date-text.month {
+  font-size: 0.7em;
+  top: 3%;
+  text-transform: capitalize;
+}
+
+#flash-sales>.-tabs>.-tabs_container>div>.date-text.day {
+  left: 5%;
+}
+
+#flash-sales>.-tabs>.-tabs_container>div>.date-text.month {
+  right: 5%;
+}
+
+#flash-sales>.-tabs>.-tabs_container>div>.date-text.date {
+  top: 60%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  font-size: 1.7em;
+}
 #flash-sales>.-sku_sections {
   margin-top: 20px;
   text-align-last: center;
@@ -57,6 +117,27 @@
   margin: 1%;
 }
 
+#flash-sales>.-sku_sections>.-sku>.-time {
+  display: inline-block;
+  background-color: white;
+  box-shadow: 0 0 2px rgba(0,0,0,0.3);
+  margin-bottom: 5px;
+  padding: 3px 5px;
+  font-size: 0.8em;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+#flash-sales>.-sku_sections>.-sku>.-image>.-cross_hairs {
+  opacity: 0.5;
+  top: -20%;
+  right: 5%;
+}
+
+#flash-sales>.-sku_sections>.-sku>.-image>.-cross_hairs>img {
+  width: 100%;
+  max-width: 20px;
+}
 #flash-sales>.-sku_sections>.-sku>.-image>.-sku_name {
   font-size: 0.55em;
   text-transform: capitalize;
@@ -87,6 +168,8 @@
   height: 121px;
   background-color: white;
   border-radius: 15px;
+  box-shadow: 0 2px 2px 0 rgba(0,0,0,0.3);
+  cursor: pointer;
 }
 
 #flash-sales>.-sku_sections>.-sku>.-image>img {
@@ -98,5 +181,29 @@
 }
 
 #flash-sales>.-sku_sections>.-sku>.-price_box {
+  width: 100%;
+  height: 20px;
+  margin-top: 4px;
+}
 
+#flash-sales>.-sku_sections>.-sku>.-price_box>.-old_price {
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  text-decoration: line-through;
+  font-size: 0.55em;
+}
+
+#flash-sales>.-sku_sections>.-sku>.-price_box>.-new_price {
+  left: 0;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  transform: translateY(-50%);
+  font-size: 0.8em;
+  background-color: red;
+  color: white;
+  padding: 2px 5px;
+  border-bottom-left-radius: 8px;
+  border-top-right-radius: 8px;
+  font-weight: 600;
 }

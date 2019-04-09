@@ -6,31 +6,30 @@
 
   </div>
   <div class="-tabs pos-rel">
-    <div class="-new_item pos-abs"></div>
-    <div class="-tabs_container pos-abs">
-      <a href="#section-1" class="pos-rel">
-        <div class="date-text month pos-abs">Apr</div>
-        <div class="date-text date">8</div>
-        <div class="date-text day pos-abs">Mon</div>
-      </a>
-      <a href="#section-2" class="pos-rel">
-        <div class="date-text month pos-abs">Apr</div>
-        <div class="date-text date">8</div>
-        <div class="date-text day pos-abs">Mon</div>
-      </a>
+    <div class="-new_item pos-abs" @click="newTab()"></div>
+    <div class="-tabs_container">
+      <div v-for="(tab, index) in tabs" :key="index" class="pos-rel">
+        <div class="date-close pos-abs" @click="removeTab(index)"></div>
+        <div class="date-text month pos-abs">{{tab.month}}</div>
+        <div class="date-text date pos-abs">{{tab.date}}</div>
+        <div class="date-text day pos-abs">{{tab.day}}</div>
+      </div>
     </div>
   </div>
   <div class="-sku_sections">
-    <div class="-sku">
-      <div class="-time">12pm</div>
+    <div v-for="(sku, index) in skus" :key="index" class="-sku">
+      <div class="-time">{{time(sku.saleTime)}}</div>
       <div class="-image pos-rel">
-        <div class="-sku_name pos-abs">mama's pride rice 50kg</div>
-        <img class="pos-abs" src="https://static.jumia.com.ng/cms/8-18/easter/flash-sales/mamas-pride.jpg" alt="sku_img"/>
-        <div class="-units pos-abs" data-content="red">100 units</div>
+        <div class="-cross_hairs pos-abs">
+          <img src="../../assets/crosshairs.svg" alt="cross hairs"/>
+        </div>
+        <div class="-sku_name pos-abs">{{sku.skuName}}</div>
+        <img class="pos-abs" v-bind:src="image(sku.image)" alt="sku_img"/>
+        <div class="-units pos-abs" data-content="red">{{sku.units}} units</div>
       </div>
-      <div class="-price_box">
-        <div class="-new_price">₦10,990</div>
-        <div class="-old_price">₦18,500</div>
+      <div class="-price_box pos-rel">
+        <div class="-new_price pos-abs">₦{{sku.newPrice}}</div>
+        <div class="-old_price pos-abs">₦{{sku.oldPrice}}</div>
       </div>
     </div>
   </div>

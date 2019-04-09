@@ -1,5 +1,11 @@
 
-export default { 
+export default {
+  get12HrsForm: function (time) {
+    if (time === 12) { return time + " pm"; }
+    else if (time > 12) { return (time - 12) + " pm"; }
+    else if (time === 0) { return 12 + " am" }
+    else { return time + " am"; }
+  },
   trimPath: function (path) {
     var trimmed = path.substring(path.lastIndexOf('/') + 1, path.length).split('-')
     return trimmed.length === 2 ? trimmed[0] + ' ' + trimmed[1] : trimmed[0]
