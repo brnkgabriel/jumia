@@ -11,16 +11,17 @@ export default {
   },
   created () {
     bus.$emit('path', util.trimPath(window.location.href));
+    bus.$on('updated', () => {
+      console.log('skus', this.skus)
+    })
   },
   methods: {
     removeTab: function (index) {
-      console.log('removed tab is at index', index)
-      bus.$emit('selected', {type: 'empty'});
+      bus.$emit('selected', {type: 'empty'})
       this.tabs.splice(index, 1)
     },
     selected: function (item) {
       bus.$emit('selected', item);
-      console.log('selected item is', item['type'])
     },
     newTab: function () {
       this.tabs.push({ month: 'jan', day: 'mon', date: 1, type: 'tab' })

@@ -1,13 +1,14 @@
 <div id="right-side-bar" class="pos-abs">
   <div class="-name">name</div>
-  <div  v-if="fields.length > 0" class="-form">
+  <div  v-if="isNotEmpty(fields)" class="-form">
     <div class="-field" v-for="(field, index) in fields" :key="index">
       <label :for="field['field'] + '-' + index" class="-field_name">{{field['name']}}</label>
-      <input v-if="field['field'] === 'input'" :id="field['field'] + '-' + index" :type="field['type']" class="-field_input" />
-      <select v-if="field['field'] === 'select'" :name="'select-' + index" id="field['field'] + '-' + index" class="-field_input">
+      <input v-if="isFile(field['type'])" :id="field['field'] + '-' + index" :type="field['type']" class="-field_input" />
+      <input v-else-if="isInput(field['field'])" :id="field['field'] + '-' + index" :type="field['type']" class="-field_input" v-model="selected[field['name']]" />
+      <select v-model="selected[field['name']]" v-else :name="'select-' + index" id="field['field'] + '-' + index" class="-field_input">
         <option v-for="(option, index) in field['options']" :value="option">{{option}}</option>
       </select>
     </div>
-    <button>submit</button>
+    <button @click="update()">submit</button>
   </div>
 </div>
