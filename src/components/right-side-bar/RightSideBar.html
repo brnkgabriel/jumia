@@ -1,1 +1,13 @@
-<div id="right-side-bar" class="pos-abs">right side bar</div>
+<div id="right-side-bar" class="pos-abs">
+  <div class="-name">name</div>
+  <div  v-if="fields.length > 0" class="-form">
+    <div class="-field" v-for="(field, index) in fields" :key="index">
+      <label :for="field['field'] + '-' + index" class="-field_name">{{field['name']}}</label>
+      <input v-if="field['field'] === 'input'" :id="field['field'] + '-' + index" :type="field['type']" class="-field_input" />
+      <select v-if="field['field'] === 'select'" :name="'select-' + index" id="field['field'] + '-' + index" class="-field_input">
+        <option v-for="(option, index) in field['options']" :value="option">{{option}}</option>
+      </select>
+    </div>
+    <button>submit</button>
+  </div>
+</div>

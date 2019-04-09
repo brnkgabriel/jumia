@@ -79,27 +79,32 @@
   transform: translate(-50%,-50%) rotate(-45deg);
 }
 
-#flash-sales>.-tabs>.-tabs_container>div>.date-text {
+#flash-sales>.-tabs>.-tabs_container>div>.-tab_content {
+  width: 100%;
+  height: 100%;
+}
+
+#flash-sales>.-tabs>.-tabs_container>div>.-tab_content>.date-text {
   color: red;
   font-weight: 600;
 }
 
-#flash-sales>.-tabs>.-tabs_container>div>.date-text.day,
-#flash-sales>.-tabs>.-tabs_container>div>.date-text.month {
+#flash-sales>.-tabs>.-tabs_container>div>.-tab_content>.date-text.day,
+#flash-sales>.-tabs>.-tabs_container>div>.-tab_content>.date-text.month {
   font-size: 0.7em;
   top: 3%;
   text-transform: capitalize;
 }
 
-#flash-sales>.-tabs>.-tabs_container>div>.date-text.day {
+#flash-sales>.-tabs>.-tabs_container>div>.-tab_content>.date-text.day {
   left: 5%;
 }
 
-#flash-sales>.-tabs>.-tabs_container>div>.date-text.month {
+#flash-sales>.-tabs>.-tabs_container>div>.-tab_content>.date-text.month {
   right: 5%;
 }
 
-#flash-sales>.-tabs>.-tabs_container>div>.date-text.date {
+#flash-sales>.-tabs>.-tabs_container>div>.-tab_content>.date-text.date {
   top: 60%;
   left: 50%;
   transform: translate(-50%,-50%);
@@ -128,7 +133,7 @@
   text-transform: uppercase;
 }
 
-#flash-sales>.-sku_sections>.-sku>.-image>.-cross_hairs {
+/* #flash-sales>.-sku_sections>.-sku>.-image>.-cross_hairs {
   opacity: 0.5;
   top: -20%;
   right: 5%;
@@ -137,7 +142,8 @@
 #flash-sales>.-sku_sections>.-sku>.-image>.-cross_hairs>img {
   width: 100%;
   max-width: 20px;
-}
+} */
+
 #flash-sales>.-sku_sections>.-sku>.-image>.-sku_name {
   font-size: 0.55em;
   text-transform: capitalize;
@@ -169,7 +175,7 @@
   background-color: white;
   border-radius: 15px;
   box-shadow: 0 2px 2px 0 rgba(0,0,0,0.3);
-  cursor: pointer;
+  cursor: move;
 }
 
 #flash-sales>.-sku_sections>.-sku>.-image>img {

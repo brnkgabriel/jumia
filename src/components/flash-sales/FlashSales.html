@@ -10,19 +10,21 @@
     <div class="-tabs_container">
       <div v-for="(tab, index) in tabs" :key="index" class="pos-rel">
         <div class="date-close pos-abs" @click="removeTab(index)"></div>
-        <div class="date-text month pos-abs">{{tab.month}}</div>
-        <div class="date-text date pos-abs">{{tab.date}}</div>
-        <div class="date-text day pos-abs">{{tab.day}}</div>
+        <div class="-tab_content" @click="selected(tab)">
+          <div class="date-text month pos-abs">{{tab.month}}</div>
+          <div class="date-text date pos-abs">{{tab.date}}</div>
+          <div class="date-text day pos-abs">{{tab.day}}</div>
+        </div>
       </div>
     </div>
   </div>
   <div class="-sku_sections">
     <div v-for="(sku, index) in skus" :key="index" class="-sku">
       <div class="-time">{{time(sku.saleTime)}}</div>
-      <div class="-image pos-rel">
-        <div class="-cross_hairs pos-abs">
+      <div class="-image pos-rel" @click="selected(sku)">
+        <!-- <div class="-cross_hairs pos-abs">
           <img src="../../assets/crosshairs.svg" alt="cross hairs"/>
-        </div>
+        </div> -->
         <div class="-sku_name pos-abs">{{sku.skuName}}</div>
         <img class="pos-abs" v-bind:src="image(sku.image)" alt="sku_img"/>
         <div class="-units pos-abs" data-content="red">{{sku.units}} units</div>

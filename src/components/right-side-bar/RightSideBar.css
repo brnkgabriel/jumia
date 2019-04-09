@@ -1,3 +1,23 @@
 #right-side-bar {
   color: white;
 }
+
+#right-side-bar>.-form>.-name {
+
+}
+
+#right-side-bar>.-form>.-field {
+  width: 90%;
+  margin: 0 auto;
+  margin-bottom: 10px;
+}
+
+#right-side-bar>.-form>.-field>.-field_name {
+  text-align: left;
+  display: block;
+  width: 100%;
+}
+
+#right-side-bar>.-form>.-field>.-field_input {
+  width: 100%
+}
