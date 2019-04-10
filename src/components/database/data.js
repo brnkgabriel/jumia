@@ -1,26 +1,26 @@
 export default {
   'flash sales': [
     'skuName',
-    'oldPrice',
-    'newPrice',
-    'units',
-    'time',
-    'image',
-    'soldOut',
-    'containerId'
+    'skuOldPrice',
+    'skuNewPrice',
+    'skuUnits',
+    'skuTime',
+    'skuImage',
+    'skuStatus',
+    'skuContainerId'
   ],
   'treasure hunt': [
     'skuName',
-    'oldPrice',
-    'newPrice',
-    'units',
-    'time',
-    'image',
-    'soldOut',
-    'containerId',
-    'categoryName',
-    'link',
-    'deepLink'
+    'skuOldPrice',
+    'skuNewPrice',
+    'skuUnits',
+    'skuTime',
+    'skuImage',
+    'skuSoldOut',
+    'skuContainerId',
+    'skuCategoryName',
+    'skuLink',
+    'skuDeepLink'
   ],
   'vouchers': [
     'skuName',
@@ -289,12 +289,12 @@ export default {
     ]}
   ],
   sku: [
-    { name: 'time', field: 'input', type: 'time' },
+    { name: 'skuTime', field: 'input', type: 'time' },
     { name: 'skuName', field: 'input', type: 'text' },
-    { name: 'image', field: 'input', type: 'file' },
-    { name: 'units', field: 'input', type: 'number' },
-    { name: 'newPrice', field: 'input', type: 'number' },
-    { name: 'oldPrice', field: 'input', type: 'number' }
+    { name: 'skuImage', field: 'input', type: 'file' },
+    { name: 'skuUnits', field: 'input', type: 'number' },
+    { name: 'skuNewPrice', field: 'input', type: 'number' },
+    { name: 'skuOldPrice', field: 'input', type: 'number' }
   ],
   fsTerms: [
     {
