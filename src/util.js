@@ -1,3 +1,4 @@
+import data from './components/database/data'
 
 export default {
   get12HrsForm: function (time) {
@@ -48,5 +49,12 @@ export default {
     return '<div class="-V-align -col-2 -no_padding"><div class="-V-inner"><p class="-arrow-bck -align-right">12 am</p><h2 class="-uppercase -align-left">live  <br/>now</h2></div></div><div class="position-absolutely" id="arrow-container"><div class="to-float left" id="prev-' + index + '">   <img class="bf-fs-arrow" src="./left-arrow.png" width="50" height="50" alt="left arrow"></div><div class="to-float right" id="next-' + index + '"><img class="bf-fs-arrow" src="./right-arrow.png" width="50" height="50" alt="right arrow"></div></div><div id="slider-' + index + '" class="-col-10 -no_padding -scrollable">'
   },
   flashSaleRowBottom: '</div></div>',
-  codeRegEx: /\r\n|\n\r|\n|\r/g
+  codeRegEx: /\r\n|\n\r|\n|\r/g,
+  formatTime: function (date, time) {
+    var dateTrimmed = new Date(date)
+    var month = data.months[dateTrimmed.getMonth()]
+    var year = dateTrimmed.getFullYear();
+    var dateNo = dateTrimmed.getDate();
+    return month + ' ' + dateNo + ' ' + year + ' ' + time + ":00 GMT+0100"
+  }
 }

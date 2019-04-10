@@ -32,8 +32,11 @@ export default {
     image: function (src) {
       return require('../../assets/' + src);
     },
-    time: function (time) {
-      return util.get12HrsForm(new Date(time).getHours())
-    }
+    time: function (date, time) {
+      return util.get12HrsForm(
+        new Date(util.formatTime(date, time))
+        .getHours()
+      )
+    },
   }
 };

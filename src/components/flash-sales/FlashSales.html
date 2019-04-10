@@ -20,18 +20,18 @@
   </div>
   <div class="-sku_sections">
     <div v-for="(sku, index) in skus" :key="index" class="-sku">
-      <div class="-time">{{time(sku.saleTime)}}</div>
+      <div class="-time">{{time(sku.skuDate, sku.skuTime)}}</div>
       <div class="-image pos-rel" @click="selected(sku)">
         <!-- <div class="-cross_hairs pos-abs">
           <img src="../../assets/crosshairs.svg" alt="cross hairs"/>
         </div> -->
         <div class="-sku_name pos-abs">{{sku.skuName}}</div>
-        <img class="pos-abs" v-bind:src="image(sku.image)" alt="sku_img"/>
-        <div class="-units pos-abs" data-content="red">{{sku.units}} units</div>
+        <img class="pos-abs" v-bind:src="image(sku.skuImage)" alt="sku_img"/>
+        <div class="-units pos-abs" data-content="red">{{sku.skuUnits}} units</div>
       </div>
       <div class="-price_box pos-rel">
-        <div class="-new_price pos-abs">₦{{sku.newPrice}}</div>
-        <div class="-old_price pos-abs">₦{{sku.oldPrice}}</div>
+        <div class="-new_price pos-abs">₦{{sku.skuNewPrice}}</div>
+        <div class="-old_price pos-abs">₦{{sku.skuOldPrice}}</div>
       </div>
     </div>
   </div>
