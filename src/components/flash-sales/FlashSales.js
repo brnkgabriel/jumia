@@ -16,12 +16,15 @@ export default {
     })
   },
   methods: {
-    removeTab: function (index) {
-      bus.$emit('selected', {type: 'empty'})
+    removeTab: function (index, tab) {
+      bus.$emit('remove', tab)
       this.tabs.splice(index, 1)
     },
     selected: function (item) {
-      bus.$emit('selected', item);
+      bus.$emit('selected', item)
+    },
+    joinProperties: function (obj) { 
+      return Object.keys(obj).map(key => obj[key]).join('-')
     },
     newTab: function () {
       this.tabs.push({ month: 'jan', day: 'mon', date: 1, type: 'tab' })

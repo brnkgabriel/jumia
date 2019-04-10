@@ -9,7 +9,7 @@
     <div class="-new_item pos-abs" @click="newTab()"></div>
     <div class="-tabs_container">
       <div v-for="(tab, index) in tabs" :key="index" class="pos-rel">
-        <div class="date-close pos-abs" @click="removeTab(index)"></div>
+        <div class="date-close pos-abs" @click="removeTab(index, tab)"></div>
         <div class="-tab_content" @click="selected(tab)">
           <div class="date-text month pos-abs">{{tab.month}}</div>
           <div class="date-text date pos-abs">{{tab.date}}</div>

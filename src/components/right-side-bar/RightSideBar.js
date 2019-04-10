@@ -6,13 +6,18 @@ export default {
   data() {
     return {
       fields: [],
-      selected: {}
+      selected: {},
+      displayWidget: true
     }
   },
   created () {
     bus.$on('selected', item => { 
       this.fields = data[item['type']]
-      this.selected = item
+      this.selected = item;
+      this.displayWidget = true;
+    })
+    bus.$on('remove', item => {
+      this.displayWidget = !(JSON.stringify(this.selected) === JSON.stringify(item))
     })
   },
   methods: {

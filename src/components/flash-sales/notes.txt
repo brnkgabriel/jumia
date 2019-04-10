@@ -27,3 +27,7 @@ skus
 context menu codepens
 https://codepen.io/callmenick/pen/xbaWdB
 https://codepen.io/Vovastradamus/pen/pvjjVQ
+
+flash sales
+-----------
+. clicking tab, sku, terms bar and banner should update context fields on the right side pane

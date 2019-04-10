@@ -1,6 +1,6 @@
 <div id="right-side-bar" class="pos-abs">
   <div class="-name">name</div>
-  <div  v-if="isNotEmpty(fields)" class="-form">
+  <div v-if="displayWidget" class="-form">
     <div class="-field" v-for="(field, index) in fields" :key="index">
       <label :for="field['field'] + '-' + index" class="-field_name">{{field['name']}}</label>
       <input v-if="isFile(field['type'])" :id="field['field'] + '-' + index" :type="field['type']" class="-field_input" />
