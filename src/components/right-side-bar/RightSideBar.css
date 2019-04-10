@@ -1,5 +1,6 @@
 #right-side-bar {
   color: white;
+  overflow: auto;
 }
 
 #right-side-bar>.-form>.-name {
@@ -20,4 +21,14 @@
 
 #right-side-bar>.-form>.-field>.-field_input {
   width: 100%
+}
+
+#right-side-bar>.-form>.-field>.-field_input.-list>textarea {
+  width: 100%;
+}
+
+#right-side-bar>.-form>.-field>.-field_input.-list>ol>li {
+  font-size: 0.8em;
+  text-align: left;
+  margin-left: 5%;
 }

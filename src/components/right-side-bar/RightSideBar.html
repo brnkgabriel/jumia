@@ -1,11 +1,17 @@
 <div id="right-side-bar" class="pos-abs">
-  <div class="-name">name</div>
+  <div class="-name">{{itemName}}</div>
   <div v-if="displayWidget" class="-form">
     <div class="-field" v-for="(field, index) in fields" :key="index">
       <label :for="field['field'] + '-' + index" class="-field_name">{{field['name']}}</label>
-      <input v-if="isFile(field['type'])" :id="field['field'] + '-' + index" :type="field['type']" class="-field_input" />
-      <input v-else-if="isInput(field['field'])" :id="field['field'] + '-' + index" :type="field['type']" class="-field_input" v-model="selected[field['name']]" />
-      <select v-model="selected[field['name']]" v-else :name="'select-' + index" id="field['field'] + '-' + index" class="-field_input">
+      <input v-if="isInput(field['field'])" :id="field['field'] + '-' + index" :type="field['type']" class="-field_input" v-model="selected[field['name']]" />
+      <textarea v-else-if="isTextArea(field['field'])" :id="field['field'] + '-' + index" cols="30" rows="5" v-model="selected[field['name']]" class="-field_input"></textarea>
+      <div v-else-if="isList(field['field'])" class="-field_input -list">
+        <textarea :id="field['field'] + '-' + index" cols="30" rows="5" v-model="selected[field['name']]"></textarea>
+        <ol>
+          <li v-for="(item, index) in selected['list']">{{item}}</li>
+        </ol>
+      </div>
+      <select v-else-if="isSelect(field['field'])" v-model="selected[field['name']]" :name="'select-' + index" id="field['field'] + '-' + index" class="-field_input">
         <option v-for="(option, index) in field['options']" :value="option">{{option}}</option>
       </select>
     </div>

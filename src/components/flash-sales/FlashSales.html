@@ -2,8 +2,9 @@
   <div class="-banner">
 
   </div>
-  <div class="-terms">
-
+  <div class="-terms" @click="selected(terms)">
+    <span class="-terms_text">{{terms.text}}</span>
+    <span class="-terms_cta">, <i>{{terms.cta}}</i></span>
   </div>
   <div class="-tabs pos-rel">
     <div class="-new_item pos-abs" @click="newTab()"></div>

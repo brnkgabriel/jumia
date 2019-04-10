@@ -6,7 +6,8 @@ export default {
   data() {
     return {
       skus: data.fsSkus,
-      tabs: []
+      tabs: [],
+      terms: data.fsTerms
     };
   },
   created () {
@@ -23,11 +24,8 @@ export default {
     selected: function (item) {
       bus.$emit('selected', item)
     },
-    joinProperties: function (obj) { 
-      return Object.keys(obj).map(key => obj[key]).join('-')
-    },
     newTab: function () {
-      this.tabs.push({ month: 'jan', day: 'mon', date: 1, type: 'tab' })
+      this.tabs.push({ day: 'mon', date: 1, month: 'jan', type: 'tab' })
     },
     image: function (src) {
       return require('../../assets/' + src);

@@ -1,6 +1,7 @@
 /* eslint-disable */
 import { bus } from '../../main'
 import data from '../database/data'
+import util from '../../util'
 
 export default {
   data() {
@@ -20,11 +21,19 @@ export default {
       this.displayWidget = !(JSON.stringify(this.selected) === JSON.stringify(item))
     })
   },
+  computed: {
+    itemName: function () {
+      return this.selected.skuName ||
+      this.selected.name ||
+      util.joinProperties(this.selected)
+    }
+  },
   methods: {
     isInput: function (field) { return field === 'input' },
     isSelect: function (field) { return field === 'select' },
+    isTextArea: function (field) { return field === 'textarea' },
+    isList: function (field) { return field === 'list' },
     isNotEmpty: function (fields) { return fields.length > 0 },
-    isFile: function(type) { return type === 'file' },
     update: function () {
       bus.$emit('updated');
     }

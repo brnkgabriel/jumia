@@ -298,48 +298,54 @@ export default {
       "tab": "0"
     }
   ],
+  fsTerms: {
+    name: 'Flash Sale Terms',
+    text: "for everything you need to know about jumia's flash sales",
+    cta: 'click here',
+    type: 'terms',
+    list: [
+      'Selected products are offered to the public at highly subsidized prices by Jumia. Discount level can be as high as 90% off depending on the offer',
+      'The number of products are of a limited quantity.',
+      'Flash sales go live at a specified time.',
+      'Flash sales are only available on the Jumia App.',
+      'Flash sales are usually limited to one item per customer.',
+      'As selected products are popular and of limited quantity, you can expect them to sell out very quickly.',
+      'Flash sales typically sell out in seconds.',
+      'Finding an item and adding it to your cart is no guaranty that you will be able to checkout with it before others.',
+      'Bear in mind that tens of thousands of people are on the same page trying to buy the same product.',
+      'It’s really a case of the fastest fingers first.',
+      'You need to be super quick with your phone and on a fast and stable internet connection to buy a flash sale.',
+      'Jumia reserves the right to cancel orders it deems as fraudulent.',
+      'Jumia reserves the right to change products offered for flash sales.'
+    ]
+  },
   tab: [
-    { name: 'month', field: 'select', options: [
-      'jan', 'feb', 'mar', 'apr', 'may', 'jun',
-      'jul', 'aug', 'sep', 'oct', 'nov', 'dec'
-    ]},
+    {
+      name: 'day', field: 'select', options: [
+        'mon', 'tue', 'wed', 'thu', 'fri', 'sat', 'sun'
+      ]
+    },
     { name: 'date', field: 'input', type: 'number' },
-    { name: 'day', field: 'select', options: [
-      'mon', 'tue', 'wed', 'thu', 'fri', 'sat', 'sun'
-    ]}
+    {
+      name: 'month', field: 'select', options: [
+        'jan', 'feb', 'mar', 'apr', 'may', 'jun',
+        'jul', 'aug', 'sep', 'oct', 'nov', 'dec'
+      ]
+    }
   ],
   sku: [
     { name: 'skuDate', field: 'input', type: 'date' },
     { name: 'skuTime', field: 'input', type: 'time' },
     { name: 'skuName', field: 'input', type: 'text' },
-    { name: 'skuImage', field: 'input', type: 'file' },
+    { name: 'skuImage', field: 'input', type: 'text' },
     { name: 'skuUnits', field: 'input', type: 'number' },
     { name: 'skuNewPrice', field: 'input', type: 'number' },
     { name: 'skuOldPrice', field: 'input', type: 'number' }
   ],
-  fsTerms: [
-    {
-      text: "for everything you need to know about jumia's flash sales,",
-      cta: 'click here',
-      terms: [
-        'Selected products are offered to the public at highly subsidized prices by Jumia. Discount level can be as high as 90% off depending on the offer',
-        'The number of products are of a limited quantity.',
-        'Flash sales go live at a specified time.',
-        'Flash sales are only available on the Jumia App.',
-        'Flash sales are usually limited to one item per customer.',
-        'As selected products are popular and of limited quantity, you can expect them to sell out very quickly.',
-        'Flash sales typically sell out in seconds.',
-        'Finding an item and adding it to your cart is no guaranty that you will be able to checkout with it before others.',
-        'Bear in mind that tens of thousands of people are on the same page trying to buy the same product.',
-        'It’s really a case of the fastest fingers first.',
-        'You need to be super quick with your phone and on a fast and stable internet connection to buy a flash sale.',
-        'Jumia reserves the right to cancel orders it deems as fraudulent.',
-        'Jumia reserves the right to change products offered for flash sales.'
-      ]
-    }
-  ],
   terms: [
-    { name: 'cta', field: 'input', type: 'text' }
+    { name: 'text', field: 'textarea', type: 'textarea' },
+    { name: 'cta', field: 'input', type: 'text' },
+    { name: 'terms', field: 'list', type: 'list' }
   ],
   removedTab: [],
   months: [

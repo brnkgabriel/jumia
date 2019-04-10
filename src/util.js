@@ -56,5 +56,8 @@ export default {
     var year = dateTrimmed.getFullYear();
     var dateNo = dateTrimmed.getDate();
     return month + ' ' + dateNo + ' ' + year + ' ' + time + ":00 GMT+0100"
-  }
+  },
+  joinProperties: function (obj) { 
+    return Object.keys(obj).map(key => obj[key]).join(' ')
+  },
 }

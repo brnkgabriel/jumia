@@ -16,7 +16,34 @@
   height: 29px;
   width: 464px;
   margin: 0 auto;
+  display: inline-block;
   margin-top: 20px;
+  cursor: move
+}
+
+#flash-sales>.-terms>.-terms_text,
+#flash-sales>.-terms>.-terms_cta {
+  display: inline-block;
+  vertical-align: middle;
+  font-size: 0.8em;
+  font-weight: 600;
+  text-transform: capitalize;
+}
+
+#flash-sales>.-terms>.-terms_cta>i {
+  background-color: black;
+  color: white;
+  display: inline-block;
+  vertical-align: middle;
+  padding: 3px 5px;
+  border-radius: 5px;
+}
+
+#flash-sales>.-terms::before {
+  height: 100%;
+  content: '';
+  display: inline-block;
+  vertical-align: middle;
 }
 
 #flash-sales>.-tabs {
